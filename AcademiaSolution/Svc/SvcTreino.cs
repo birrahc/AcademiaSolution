@@ -19,7 +19,7 @@ namespace AcademiaSolution.Svc
             ConectDb conexao = new ConectDb();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
-            cmd.CommandText = @"INSERT INTO treino (fktipo, descricao) VALUES (@fktipo, @descricao,)";
+            cmd.CommandText = @"INSERT INTO treino (fktipo, descricao) VALUES (@fktipo, @descricao)";
 
             cmd.Parameters.AddWithValue("@fktipo", pTreino.FkTipo);
             cmd.Parameters.AddWithValue("@descricao", pTreino.Decricao);
@@ -94,7 +94,7 @@ namespace AcademiaSolution.Svc
 
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
-            cmd.CommandText = @"DELETE FROM Treino WHERE id_Treino=@id";
+            cmd.CommandText = @"DELETE FROM Treino WHERE id_treino=@id";
 
             cmd.Parameters.AddWithValue("@id", pTreino.IdTreino);
 
