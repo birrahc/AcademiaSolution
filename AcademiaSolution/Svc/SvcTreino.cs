@@ -21,7 +21,7 @@ namespace AcademiaSolution.Svc
             cmd.Connection = conexao.connection;
             cmd.CommandText = @"INSERT INTO treino (fktipo, descricao) VALUES (@fktipo, @descricao)";
 
-            cmd.Parameters.AddWithValue("@fktipo", pTreino.FkTipo);
+            cmd.Parameters.AddWithValue("@fktipo", pTreino.Tipo);
             cmd.Parameters.AddWithValue("@descricao", pTreino.Decricao);
 
             cmd.ExecuteNonQuery();
@@ -45,7 +45,7 @@ namespace AcademiaSolution.Svc
                 
                 Treino pTreino = new Treino();
                 pTreino.IdTreino = (int)reader["id_treino"];
-                pTreino.FkTipo = (int)reader["fktipo"];
+                pTreino.Tipo = (int)reader["fktipo"];
                 pTreino.Decricao = reader["descricao"].ToString();
 
                 treinos.Add(pTreino);
@@ -71,7 +71,7 @@ namespace AcademiaSolution.Svc
             cmd.Connection = conexao.connection;
             cmd.CommandText = @"UPDATE treino SET fktipo=@fktipo, descricao=@descricao WHERE id_treino=@id";
 
-            cmd.Parameters.AddWithValue("@fktipo", pTreino.FkTipo);
+            cmd.Parameters.AddWithValue("@fktipo", pTreino.Tipo);
             cmd.Parameters.AddWithValue("@descricao", pTreino.Decricao);
             cmd.Parameters.AddWithValue("@id", pTreino.IdTreino);
 
@@ -94,7 +94,7 @@ namespace AcademiaSolution.Svc
 
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
-            cmd.CommandText = @"DELETE FROM Treino WHERE id_treino=@id";
+            cmd.CommandText = @"DELETE FROM treino WHERE id_treino=@id";
 
             cmd.Parameters.AddWithValue("@id", pTreino.IdTreino);
 
@@ -109,7 +109,7 @@ namespace AcademiaSolution.Svc
             {
                 throw new ArgumentException(nameof(pTreino));
             }
-            if (pTreino.FkTipo == null)
+            if (pTreino.Tipo == null)
             {
                 throw new ArgumentException("O Campo Nome não pode estar vazio");
 

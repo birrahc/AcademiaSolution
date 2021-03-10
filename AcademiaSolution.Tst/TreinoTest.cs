@@ -16,7 +16,7 @@ namespace AcademiaSolution.Tst
         public void TesCadastroTreino()
         {
             Treino pTreino = new Treino();
-            pTreino.FkTipo = 1;
+            pTreino.Tipo = 1;
             pTreino.Decricao = "Biceps Com Corda";
             SvcTreino.CadastrarTreino(pTreino);
         }
@@ -33,7 +33,7 @@ namespace AcademiaSolution.Tst
         public void TesAtualizaTreino()
         {
             Treino pTreino = new Treino();
-            pTreino.FkTipo = 2;
+            pTreino.Tipo = 2;
             pTreino.Decricao = "Triceps com barra";
             pTreino.IdTreino = 1;
             SvcTreino.AtualizarTreino(pTreino);

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AcademiaAtlas.Mdl
 {
-    class Pagamento
+    public class Pagamento
     {
         public int IdPagamento { get; set; }
-        public int FkAluno { get; set; }
+        public int AlunoId { get; set; }
         public DateTime DataPagt { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFinal { get; set; }

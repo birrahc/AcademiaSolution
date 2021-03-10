@@ -12,7 +12,7 @@ namespace AcademiaAtlas
     public class Treino
     {
         public int IdTreino { get; set; }
-        public int FkTipo{ get; set; }
+        public int Tipo{ get; set; }
         public string Decricao { get; set; }
     }
 }

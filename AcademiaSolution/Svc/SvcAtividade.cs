@@ -115,11 +115,11 @@ namespace AcademiaSolution.Svc
             }
             if (String.IsNullOrEmpty(atividade.Titulo))
             {
-                throw new ArgumentException("O Campo Nome não pode estar vazio");
+                throw new ArgumentException("O Campo Titulo não pode estar vazio");
 
                 if (atividade.Descricao == null || atividade.Descricao == "")
                 {
-                    throw new ArgumentException("O Campo Nascimento pode ficar vazio");
+                    throw new ArgumentException("O Campo descrição não pode ficar vazio");
                 }
             }
         }
