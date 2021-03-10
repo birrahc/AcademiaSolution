@@ -60,6 +60,7 @@
     <Compile Include="AtividadesTest.cs" />
     <Compile Include="ProfessorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestLogin.cs" />
     <Compile Include="TestPagamento.cs" />
     <Compile Include="TreinoTest.cs" />
   </ItemGroup>
