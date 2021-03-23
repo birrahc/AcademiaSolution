@@ -1,4 +1,4 @@
-﻿using AcademiaSolution.Enums;
+﻿using AcademiaAtlas.Mdl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace AcademiaAtlas
-    .Mdl
+namespace AcademiaSolution.Mdl
 {
-    public class Treino
+    public class Treino:Aluno
     {
         public int IdTreino { get; set; }
-        public int Tipo{ get; set; }
+        public Enums.EClassificacao IdTipoTreino { get; set; }
+        public string DescricaoTreino { get; set; }
         public string Decricao { get; set; }
     }
 }

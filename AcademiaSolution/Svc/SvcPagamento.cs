@@ -13,13 +13,13 @@ namespace AcademiaSolution.Svc
     {
         public static void CadastrarPagamento(Pagamento pPagamento)
         {
-            //VerificaDados(pPagamento);
+            VerificaDados(pPagamento);
             ConectDb conexao = new ConectDb();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
             cmd.CommandText = @"INSERT INTO Pagamentos (fkaluno_pgt, data_pgt, ref_data_in, ref_data_fi, valor, desconto, observacao) VALUES (@fkaluno_pgt, @data_pgt, @ref_data_in, @ref_data_fi, @valor, @desconto, @observacao)";
 
-            cmd.Parameters.AddWithValue("@fkaluno_pgt", pPagamento.AlunoId);
+            cmd.Parameters.AddWithValue("@fkaluno_pgt", pPagamento.IdPessoa);
             cmd.Parameters.AddWithValue("@data_pgt", pPagamento.DataPagt);
             cmd.Parameters.AddWithValue("@ref_data_in", pPagamento.DataInicio);
             cmd.Parameters.AddWithValue("@ref_data_fi", pPagamento.DataFinal);
@@ -39,7 +39,8 @@ namespace AcademiaSolution.Svc
 
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
-            cmd.CommandText = @"SELECT * FROM pagamentos";
+            cmd.CommandText = @"SELECT id_pgt, nome, data_pgt,ref_data_in,ref_data_fi, valor, desconto, observacao FROM academia_lr.pagamentos pg
+                                    inner join aluno al on pg.fkaluno_pgt=al.id_aluno";
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -48,7 +49,7 @@ namespace AcademiaSolution.Svc
 
                 Pagamento pPagamento = new Pagamento();
                 pPagamento.IdPagamento = (int)reader["id_pgt"];
-                pPagamento.AlunoId = (int)reader["fkaluno_pgt"];
+                pPagamento.Nome = (string)reader["nome"];
                 pPagamento.DataPagt = (DateTime)reader["data_pgt"];
                 pPagamento.DataInicio = (DateTime)reader["ref_data_in"];
                 pPagamento.DataFinal = (DateTime)reader["ref_data_fi"];
@@ -79,7 +80,7 @@ namespace AcademiaSolution.Svc
             cmd.Connection = conexao.connection;
             cmd.CommandText = @"UPDATE pagamentos SET fkaluno_pgt=@fkaluno_pgt, data_pgt=@data_pgt, ref_data_in=@ref_data_in, ref_data_fi=@ref_data_fi, valor=@valor, desconto=@desconto, observacao=@observacao WHERE id_pgt=@id";
             
-            cmd.Parameters.AddWithValue("@fkaluno_pgt", pPagamento.AlunoId);
+            cmd.Parameters.AddWithValue("@fkaluno_pgt", pPagamento.IdPessoa);
             cmd.Parameters.AddWithValue("@data_pgt", pPagamento.DataPagt);
             cmd.Parameters.AddWithValue("@ref_data_in", pPagamento.DataInicio);
             cmd.Parameters.AddWithValue("@ref_data_fi", pPagamento.DataFinal);
@@ -121,9 +122,9 @@ namespace AcademiaSolution.Svc
             {
                 throw new ArgumentException(nameof(pPagamento));
             }
-            if (pPagamento.AlunoId==null)
+            if (pPagamento.IdPessoa==null)
             {
-                throw new ArgumentException("O Campo Nome não pode estar vazio");
+                throw new ArgumentException("O Id do Aluno não pode estar vazio");
             }
             if (pPagamento.DataPagt==null && pPagamento.DataInicio == null && pPagamento.DataFinal == null && pPagamento.Valor==null)
             {

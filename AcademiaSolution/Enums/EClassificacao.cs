@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace AcademiaSolution.Enums
 {
-    enum TipoPessoa
+    public enum EClassificacao
     {
-        Aluno,
-        Professor
+        Hipermetropia=1,
+        ResistenciaMuscular=2,
+        PotenciaMuscular=3,
+        ForcaMuscular=4,
+        Hit=5
     }
 }

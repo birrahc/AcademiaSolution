@@ -1,5 +1,6 @@
 ﻿using AcademiaAtlas.Mdl;
 using AcademiaSolution.Dao;
+using AcademiaSolution.Mdl;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace AcademiaSolution.Svc
             cmd.Connection = conexao.connection;
             cmd.CommandText = @"INSERT INTO treino (fktipo, descricao) VALUES (@fktipo, @descricao)";
 
-            cmd.Parameters.AddWithValue("@fktipo", pTreino.Tipo);
+            cmd.Parameters.AddWithValue("@fktipo", pTreino.IdTipoTreino);
             cmd.Parameters.AddWithValue("@descricao", pTreino.Decricao);
 
             cmd.ExecuteNonQuery();
@@ -36,7 +37,8 @@ namespace AcademiaSolution.Svc
 
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
-            cmd.CommandText = @"SELECT * FROM treino";
+            cmd.CommandText = @"SELECT id_treino,descricao_tipo, descricao FROM academia_lr.treino tn
+                                    inner join tipo_treino tt on tt.id_tipo_treino= tn.fktipo";
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -45,7 +47,7 @@ namespace AcademiaSolution.Svc
                 
                 Treino pTreino = new Treino();
                 pTreino.IdTreino = (int)reader["id_treino"];
-                pTreino.Tipo = (int)reader["fktipo"];
+                pTreino.DescricaoTreino = reader["descricao_tipo"].ToString();
                 pTreino.Decricao = reader["descricao"].ToString();
 
                 treinos.Add(pTreino);
@@ -71,7 +73,7 @@ namespace AcademiaSolution.Svc
             cmd.Connection = conexao.connection;
             cmd.CommandText = @"UPDATE treino SET fktipo=@fktipo, descricao=@descricao WHERE id_treino=@id";
 
-            cmd.Parameters.AddWithValue("@fktipo", pTreino.Tipo);
+            cmd.Parameters.AddWithValue("@fktipo", pTreino.IdTipoTreino);
             cmd.Parameters.AddWithValue("@descricao", pTreino.Decricao);
             cmd.Parameters.AddWithValue("@id", pTreino.IdTreino);
 
@@ -109,7 +111,7 @@ namespace AcademiaSolution.Svc
             {
                 throw new ArgumentException(nameof(pTreino));
             }
-            if (pTreino.Tipo == null)
+            if (pTreino.IdTipoTreino == null)
             {
                 throw new ArgumentException("O Campo Nome não pode estar vazio");
 

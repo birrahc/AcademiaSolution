@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademiaAtlas.Mdl
 {
-    public class Relatorio
+    public class Relatorio : Pagamento
     {
         public int IdRelatorio { get; set; }
         public DateTime Data { get; set; }

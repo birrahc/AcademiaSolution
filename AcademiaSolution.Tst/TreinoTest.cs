@@ -1,4 +1,5 @@
 ﻿using AcademiaAtlas.Mdl;
+using AcademiaSolution.Mdl;
 using AcademiaSolution.Svc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -16,8 +17,8 @@ namespace AcademiaSolution.Tst
         public void TesCadastroTreino()
         {
             Treino pTreino = new Treino();
-            pTreino.Tipo = 1;
-            pTreino.Decricao = "Biceps Com Corda";
+            pTreino.IdTipoTreino = Enums.EClassificacao.Hipermetropia;
+            pTreino.Decricao = "Supino Inclinado";
             SvcTreino.CadastrarTreino(pTreino);
         }
 
@@ -33,9 +34,9 @@ namespace AcademiaSolution.Tst
         public void TesAtualizaTreino()
         {
             Treino pTreino = new Treino();
-            pTreino.Tipo = 2;
+            pTreino.IdTipoTreino = Enums.EClassificacao.PotenciaMuscular;
             pTreino.Decricao = "Triceps com barra";
-            pTreino.IdTreino = 1;
+            pTreino.IdTreino = 3;
             SvcTreino.AtualizarTreino(pTreino);
         }
 

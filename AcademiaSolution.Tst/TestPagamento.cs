@@ -16,7 +16,7 @@ namespace AcademiaSolution.Tst
         public void TestCadastrarPagamento() 
         {
             Pagamento pgt = new Pagamento();
-            pgt.AlunoId = 8;
+            pgt.IdPessoa = 8;
             pgt.DataPagt =  DateTime.Now;
             pgt.DataInicio = DateTime.Parse("2021-02-09");
             pgt.DataFinal = DateTime.Parse("2021-03-09");
@@ -28,6 +28,8 @@ namespace AcademiaSolution.Tst
         [TestMethod]
         public void TestBuscarPagamento()
         {
+            Aluno aluno= new Aluno();
+            aluno.Nome = "Junior";
             var pgt = SvcPagamento.BuscarPagamento();
         }
 
@@ -36,7 +38,7 @@ namespace AcademiaSolution.Tst
         {
 
             Pagamento pgt = new Pagamento();
-            pgt.AlunoId = 9;
+            pgt.IdPessoa = 9;
             pgt.DataPagt = DateTime.Parse("2021-02-09");
             pgt.DataInicio = DateTime.Parse("2021-03-09");
             pgt.DataFinal = DateTime.Parse("2021-04-09");

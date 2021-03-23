@@ -148,18 +148,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\ConectDb.cs" />
-    <Compile Include="Enums\Classificacao.cs" />
-    <Compile Include="Enums\TipoPessoa.cs" />
+    <Compile Include="Enums\EClassificacao.cs" />
+    <Compile Include="Enums\ERepeticoes.cs" />
+    <Compile Include="Enums\ETipo.cs" />
+    <Compile Include="Enums\ETipoPessoa.cs" />
     <Compile Include="Interfaces\ICrud.cs" />
     <Compile Include="Mdl\Aluno.cs" />
     <Compile Include="Mdl\Atividade.cs" />
-    <Compile Include="Mdl\Aulas.cs" />
     <Compile Include="Mdl\Login.cs" />
     <Compile Include="Mdl\Pagamento.cs" />
     <Compile Include="Mdl\Pessoa.cs" />
     <Compile Include="Mdl\Professor.cs" />
     <Compile Include="Mdl\Relatorio.cs" />
     <Compile Include="Mdl\Treino.cs" />
+    <Compile Include="Mdl\TreinoAluno.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Svc\SvcAluno.cs" />
     <Compile Include="Svc\SvcAtividade.cs" />
@@ -167,6 +169,8 @@
     <Compile Include="Svc\SvcPagamento.cs" />
     <Compile Include="Svc\SvcProfessor.cs" />
     <Compile Include="Svc\SvcTreino.cs" />
+    <Compile Include="Svc\SvcTreinoAluno.cs" />
+    <Compile Include="Teste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">
