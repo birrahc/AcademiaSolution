@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="AcademiaAtlas.Web.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/stylo_large.css">
+
+    <asp:ContentPlaceHolder ID="Cabecalho" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <div id='banner'>
+                <img src='/imagens/atlaslogo.jpg' />
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div id="menu-lateral">
+                    <nav>
+                        <ul>
+                            <li><a href="DadosPessoaisAluno.aspx">Alunos</a>
+                                <ul>
+                                    <li><a href="DadosPessoaisAluno.aspx">Ativos</a></li>
+                                    <li><a href="AlunosInativos.aspx">Inativos</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Pagamentos</a>
+                                <ul>
+                                    <li><a href="RelatoriPagamentos.aspx">Relatório</a></li>
+                                    <li><a href="">Pgt Aluno</a></li>
+                                    <li><a href="">pgt Evento</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Cadastrar..</a>
+                                <ul>
+                                    <li><a href="cadastrarAluno.aspx">Aluno</a></li>
+                                    <li><a href="CadastrarEvento.aspx">Evento</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a href="logout.php">Sair</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div id="contents">
+                    <asp:ContentPlaceHolder ID="Main" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+            </section>
+
+        </main>
+        <asp:ContentPlaceHolder ID="Rodape" runat="server"></asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

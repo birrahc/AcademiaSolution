@@ -43,6 +43,27 @@ namespace AcademiaSolution.Tst
             
         }
 
+        [TestMethod]
+        public void TesBuscaAlunoDetalhado()
+        {
+            Aluno aluno = new Aluno();
+            aluno.IdPessoa = 4;
+
+            var x = SvcAluno.ListarAlunoPorID(aluno);
+           
+        }
+
+        [TestMethod]
+        public void TesBuscaAlunoDetalhadobuca()
+        {
+            Aluno aluno = new Aluno();
+            aluno.IdPessoa = 4;
+            aluno.Nome = "Arlete Santana";
+
+            var x = SvcAluno.BuscarPorNomeEId(aluno);
+
+        }
+
 
         [TestMethod]
         public void TesAtualizaAluno() 

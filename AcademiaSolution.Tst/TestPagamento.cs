@@ -34,6 +34,14 @@ namespace AcademiaSolution.Tst
         }
 
         [TestMethod]
+        public void TestBuscarPagamentoporId()
+        {
+            Pagamento aluno = new Pagamento();
+            aluno.IdPessoa = 6;
+            var pgt = SvcPagamento.BuscarPagamentoPorId(aluno);
+        }
+
+        [TestMethod]
         public void TestAtualizarPagamento() 
         {
 

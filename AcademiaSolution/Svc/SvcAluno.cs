@@ -68,6 +68,46 @@ namespace AcademiaSolution.Svc
 
         }
 
+        public static List<Aluno>ListarAlunoPorID(Aluno aluno) 
+        {
+            var alunoDetalhado = BuscarAluno().Where(a => a.IdPessoa == aluno.IdPessoa);
+            return alunoDetalhado.ToList();
+        }
+
+        public static List<Aluno> BuscarPorNomeEId(Aluno pAluno)
+        {
+            List<Aluno> alunosLista = new List<Aluno>();
+
+            ConectDb conexao = new ConectDb();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.connection;
+            cmd.CommandText = @"SELECT * FROM aluno WHERE id_aluno = @id";
+            cmd.Parameters.AddWithValue("@id", pAluno.IdPessoa);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Aluno contato = new Aluno();
+                contato.IdPessoa = (int)reader["id_aluno"];
+                contato.Nome = reader["nome"].ToString();
+                contato.Nascimento = (DateTime)reader["nascimento"];
+                contato.Cpf = reader["cpf"].ToString();
+                contato.Telefone = reader["telefone"].ToString();
+                contato.WhatsApp = reader["whatsapp"].ToString();
+                contato.Email = reader["Email"].ToString();
+
+                alunosLista.Add(contato);
+            }
+
+            return alunosLista;
+
+            conexao.Dispose();
+
+        }
+
         public static void AtualizarDadosAluno(Aluno pAluno)
         {
             if (pAluno.IdPessoa == null)

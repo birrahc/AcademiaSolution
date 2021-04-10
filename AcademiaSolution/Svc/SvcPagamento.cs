@@ -66,6 +66,41 @@ namespace AcademiaSolution.Svc
 
         }
 
+        public static List<Pagamento> BuscarPagamentoPorId( Pagamento pgt)
+        {
+            List<Pagamento> pagamentos = new List<Pagamento>();
+
+            ConectDb conexao = new ConectDb();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.connection;
+            cmd.CommandText = @"SELECT id_pgt, nome, data_pgt,ref_data_in,ref_data_fi, valor, desconto, observacao FROM academia_lr.pagamentos pg
+                                    inner join aluno al on pg.fkaluno_pgt=al.id_aluno where id_aluno = @idAluno";
+            cmd.Parameters.AddWithValue("@idAluno", pgt.IdPessoa);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Pagamento pPagamento = new Pagamento();
+                pPagamento.IdPagamento = (int)reader["id_pgt"];
+                pPagamento.Nome = (string)reader["nome"];
+                pPagamento.DataPagt = (DateTime)reader["data_pgt"];
+                pPagamento.DataInicio = (DateTime)reader["ref_data_in"];
+                pPagamento.DataFinal = (DateTime)reader["ref_data_fi"];
+                pPagamento.Valor = (double)reader["valor"];
+                pPagamento.Desconto = (Double)reader["desconto"];
+                pPagamento.Observacao = (string)reader["observacao"];
+
+                pagamentos.Add(pPagamento);
+            }
+
+            return pagamentos;
+
+            conexao.Dispose();
+
+        }
+
         public static void AtualizarDadosPagamento(Pagamento pPagamento)
         {
             if (pPagamento.IdPagamento == null)
