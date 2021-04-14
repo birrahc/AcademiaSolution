@@ -5,6 +5,12 @@
     <asp:Panel runat="server" CssClass="conteudo-duplo">
         <asp:Panel runat="server" CssClass="camada-1">
             <h2>Alunos </h2>
+            <asp:Panel runat="server" ID="pnlCampo" CssClass="painelSearch">
+                <asp:TextBox runat="server" ID="txtSearch" CssClass="txtSearch"/>
+            </asp:Panel>
+            <asp:Panel runat="server" ID="pnlBotao" CssClass="botaoSearch">
+                <asp:Button runat="server" ID="btnSearch" Text="Buscar" CssClass="btnSearch" OnClick="btnSearch_Click"/>
+            </asp:Panel>
             <asp:Panel runat="server" CssClass="camada-2">
                 <div style="overflow-y: scroll; width:100% ; height:95%; margin-top:5px;" >
                 <asp:GridView ID="grvAluno" runat="server" Width="100%" AutoGenerateColumns="False" DataKeyNames="IdPessoa"

@@ -12,7 +12,7 @@
                </asp:Panel>
                 <asp:Panel runat="server" CssClass="divCamposCadatro">
                    <asp:Label runat="server" Text="Nascimento" width="11%"  CssClass="labelCadastro" Font-Bold="True" ForeColor="#333333"/>
-                   <asp:TextBox runat="server" ID="txbNascimento" CssClass="inputCadastro" Width="130px"/>
+                   <asp:TextBox runat="server" ID="txbNascimento" TextMode="Date" CssClass="inputCadastro" Width="160px"/>
                     <asp:Label runat="server" Text="Sexo" width="11%"  CssClass="labelCadastro" Font-Bold="True" ForeColor="#333333"/>
                    <asp:TextBox runat="server" ID="txbSexo" CssClass="inputCadastro" Width="130px"/>
                     <asp:Label runat="server" Text="Cpf" width="11%"  CssClass="labelCadastro" Font-Bold="True" ForeColor="#333333"/>

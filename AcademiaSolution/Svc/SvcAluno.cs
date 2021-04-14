@@ -35,7 +35,7 @@ namespace AcademiaSolution.Svc
             conexao.Dispose();
         }
 
-        public static List<Aluno> BuscarAluno()
+        public static List<Aluno> BuscarAluno(Aluno pAluno)
         {
             List<Aluno> alunos = new List<Aluno>();
 
@@ -43,7 +43,9 @@ namespace AcademiaSolution.Svc
 
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.connection;
-            cmd.CommandText = @"SELECT * FROM aluno";
+            string sql = @"SELECT * FROM aluno WHERE nome LIKE(@nome)";
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@nome", pAluno.Nome + "%");
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -68,11 +70,11 @@ namespace AcademiaSolution.Svc
 
         }
 
-        public static List<Aluno>ListarAlunoPorID(Aluno aluno) 
-        {
-            var alunoDetalhado = BuscarAluno().Where(a => a.IdPessoa == aluno.IdPessoa);
-            return alunoDetalhado.ToList();
-        }
+        //public static List<Aluno>ListarAlunoPorID(Aluno aluno) 
+        //{
+        //    var alunoDetalhado = BuscarAluno().Where(a => a.IdPessoa == aluno.IdPessoa);
+        //    return alunoDetalhado.ToList();
+        //}
 
         public static List<Aluno> BuscarPorNomeEId(Aluno pAluno)
         {

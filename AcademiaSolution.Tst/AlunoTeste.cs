@@ -30,8 +30,10 @@ namespace AcademiaSolution.Tst
         [TestMethod]
         public void TesBuscaAluno() 
         {
+            Aluno aluno = new Aluno();
+            aluno.Nome = "Alexandr";
             var pNascimento = DateTime.Parse("1980-11-18");
-            var anos = SvcAluno.BuscarAluno().GroupBy(a=>a.Nascimento).Where(b=>b.Key.Year==pNascimento.Year && b.Key.Month== pNascimento.Month);
+            var anos = SvcAluno.BuscarAluno(aluno).GroupBy(a=>a.Nascimento).Where(b=>b.Key.Year==pNascimento.Year && b.Key.Month== pNascimento.Month);
             var mensagem = "";
             if (anos.Any())
 
@@ -47,9 +49,9 @@ namespace AcademiaSolution.Tst
         public void TesBuscaAlunoDetalhado()
         {
             Aluno aluno = new Aluno();
-            aluno.IdPessoa = 4;
+            aluno.Nome = "";
 
-            var x = SvcAluno.ListarAlunoPorID(aluno);
+            var x = SvcAluno.BuscarAluno(aluno);
            
         }
 

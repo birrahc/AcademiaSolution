@@ -42,7 +42,21 @@ namespace AcademiaSolution.Tst
         }
 
         [TestMethod]
-        public void TestAtualizarPagamento() 
+        public void TestRelatorio() 
+        {
+
+            Pagamento pgt = new Pagamento();
+            pgt.IdPessoa = 9;
+            var dataInicio = DateTime.Parse("2021-02-01");
+            var dataFim = DateTime.Parse("2021-02-11");
+          
+            pgt.Observacao = "Pagamento referente ao mes de Março";
+            pgt.IdPagamento = 2;
+            var x = SvcPagamento.RelatorioPorPeriodo(dataInicio,dataFim);
+        }
+
+        [TestMethod]
+        public void TestAtualizarPagamento()
         {
 
             Pagamento pgt = new Pagamento();

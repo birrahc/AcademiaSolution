@@ -170,6 +170,16 @@ section {
       
     }
 
+.labelTituloAluno {
+    text-align:center;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 5px;
+    padding-bottom: 8px;
+    
+    
+}
+
 
 .labelCadastro {
     font-family: Arial;
@@ -589,7 +599,7 @@ section {
             width: 90%;
             height: 80%;
             margin: auto;
-            margin-top: 32px;
+            margin-top: 44px;
             background-color: #DCDCDC;
             border-style: solid;
             border-color: #cacac8;
@@ -1002,6 +1012,9 @@ section {
 footer {
 }
 
+.textoAlinhadoCentro {
+    text-align:center;
+}
 .textoCentro, td {
     text-align: left;
 }
@@ -1048,4 +1061,52 @@ table {
     width:100%;
     overflow:auto;
     background-color: red;
+}
+.margin-top10px {
+    margin-top:10px !important;
+}
+
+.painelSearch {
+    width: 68%;
+    float: left;
+    margin: 5px 0;
+    margin-left: 30px;
+    background-color: darkgray;
+    padding: 5px 2px;
+    border-radius: 5px;
+}
+.txtSearch {
+    width:97%;
+    padding:4px 4px;
+}
+.botaoSearch {
+    width: 20%;
+    float: left;
+    margin: 5px 0;
+    margin-left: 5px;
+    background-color: darkgray;
+    padding: 5px 2px;
+    border-radius: 5px;
+}
+.btnSearch {
+    width: 100%;
+    padding: 4px 0;
+    border-radius:5px;
+}
+
+.RelatorioPesquisa {
+    width: 30%;
+    float: left;
+    font-family: Arial;
+    margin: 0 1.666666666666667%;
+}
+
+.marginTop100 {
+    margin-top:20%;
+}
+.relatarioValores {
+    margin-top: 20%;
+    background-color: #2e2c2ad9;
+    padding: 10px 0;
+    color:white;
 }

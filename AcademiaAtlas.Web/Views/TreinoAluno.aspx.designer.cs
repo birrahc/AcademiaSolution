@@ -11,7 +11,7 @@ namespace AcademiaAtlas.Web.Views
 {
 
 
-    public partial class Relatorios
+    public partial class TreinoAluno
     {
 
         /// <summary>

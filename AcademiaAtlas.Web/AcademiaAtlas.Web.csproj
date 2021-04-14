@@ -160,6 +160,7 @@
     <Content Include="Views\DadosPessoaisAluno.aspx" />
     <Content Include="Views\PagamentosAluno.aspx" />
     <Content Include="Views\Relatorios.aspx" />
+    <Content Include="Views\TreinoAluno.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -219,6 +220,13 @@
     </Compile>
     <Compile Include="Views\Relatorios.aspx.designer.cs">
       <DependentUpon>Relatorios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TreinoAluno.aspx.cs">
+      <DependentUpon>TreinoAluno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TreinoAluno.aspx.designer.cs">
+      <DependentUpon>TreinoAluno.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

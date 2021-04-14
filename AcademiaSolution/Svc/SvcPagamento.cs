@@ -101,6 +101,49 @@ namespace AcademiaSolution.Svc
 
         }
 
+        public static List<Pagamento> RelatorioPorPeriodo(DateTime pDataInicial, DateTime pDataFinal)
+        {
+            if (pDataInicial == null) 
+            {
+                pDataInicial = DateTime.Now;
+            }
+            if (pDataFinal == null) 
+            {
+                pDataFinal = DateTime.Now;
+            }
+            List<Pagamento> pagamentos = new List<Pagamento>();
+
+            ConectDb conexao = new ConectDb();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.connection;
+            cmd.CommandText = @"select id_pgt, nome, data_pgt, valor, desconto from pagamentos p
+                                inner join aluno a on p.fkaluno_pgt = a.id_aluno
+                                WHERE data_pgt BETWEEN @dataInicio AND @dataFinal";
+
+            cmd.Parameters.AddWithValue("@dataInicio", pDataInicial);
+            cmd.Parameters.AddWithValue("@dataFinal", pDataFinal);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                Pagamento pPagamento = new Pagamento();
+                pPagamento.IdPagamento = (int)reader["id_pgt"];
+                pPagamento.Nome = (string)reader["nome"];
+                pPagamento.DataPagt = (DateTime)reader["data_pgt"];
+                pPagamento.Valor = (double)reader["valor"];
+                pPagamento.Desconto = (Double)reader["desconto"];
+                
+
+                pagamentos.Add(pPagamento);
+            }
+
+            return pagamentos;
+
+            conexao.Dispose();
+
+        }
+
         public static void AtualizarDadosPagamento(Pagamento pPagamento)
         {
             if (pPagamento.IdPagamento == null)

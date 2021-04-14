@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Relatorios.aspx.cs" Inherits="AcademiaAtlas.Web.Views.Relatorios" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TreinoAluno.aspx.cs" Inherits="AcademiaAtlas.Web.Views.TreinoAluno" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Cabecalho" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
     <asp:Panel runat="server" CssClass="conteudo">
         <asp:Panel runat="server" class="camada-1">
-            <h2>Relatorios</h2>
+            <h2>Treinos</h2>
             <asp:Panel runat="server" class="camada-2">
 
                <asp:Panel runat="server" CssClass="divCamposCadatro margin-top10px" Width="99.5%">

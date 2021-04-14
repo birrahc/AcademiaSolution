@@ -13,20 +13,19 @@ namespace AcademiaAtlas.Web.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var nome = SvcAluno.BuscarAluno();
-            grvAluno.DataSource = nome;
-            grvAluno.DataBind();
-            grvAluno.ShowHeader = false;
-
+            CarregarListaDeAlunos();
+            
         }
 
         protected void grvAluno_SelectedIndexChanged(object sender, EventArgs e)
         {
             carregarDadosDetalhados();
+           
         }
 
         private void carregarDadosDetalhados()
         {
+            CarregarListaDeAlunos();
             Aluno aluno = new Aluno();
             aluno.IdPessoa = Convert.ToInt32(grvAluno.SelectedDataKey.Values[0]);
             List<Aluno> detalhes = SvcAluno.BuscarPorNomeEId(aluno);
@@ -39,6 +38,28 @@ namespace AcademiaAtlas.Web.Views
                 lblEmail.Text = item.Email;
                 lblTelefone.Text = item.Telefone;
             }
+            LimparSearch();
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            CarregarListaDeAlunos();
+            
+        }
+        protected void CarregarListaDeAlunos() 
+        {
+            Aluno aluno = new Aluno();
+            aluno.Nome = txtSearch.Text;
+            var nome = SvcAluno.BuscarAluno(aluno);
+            grvAluno.DataSource = nome;
+            grvAluno.DataBind();
+            grvAluno.ShowHeader = false;
+            
+        }
+        protected void LimparSearch() 
+        {
+            txtSearch.Text = null;
+        }
+
     }
 }

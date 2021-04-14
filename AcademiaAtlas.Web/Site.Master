@@ -32,7 +32,7 @@
                             </li>
                             <li><a href="">Pagamentos</a>
                                 <ul>
-                                    <li><a href="RelatoriPagamentos.aspx">Relatório</a></li>
+                                    <li><a href="Relatorios.aspx">Relatório</a></li>
                                     <li><a href="">Pgt Aluno</a></li>
                                     <li><a href="">pgt Evento</a></li>
                                 </ul>
