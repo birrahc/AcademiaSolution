@@ -24,8 +24,8 @@
                     <FooterStyle BackColor="#CCCC99" />
                     <HeaderStyle CssClass="gvChildHeader" BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                    <RowStyle HorizontalAlign="Right" BackColor="#F7F7DE" />
-                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <RowStyle HorizontalAlign="Right" BackColor="#DCDCDC" />
+                    <SelectedRowStyle BackColor="#880f14" Font-Bold="True" ForeColor="White" />
                     <SortedAscendingCellStyle BackColor="#FBFBF2" />
                     <SortedAscendingHeaderStyle BackColor="#848384" />
                     <SortedDescendingCellStyle BackColor="#EAEAD3" />
@@ -37,7 +37,7 @@
     </asp:Panel>
 
     <asp:Panel runat="server" CssClass="conteudo-duplo">
-        <asp:Panel runat="server" CssClass="camada-1">
+        <asp:Panel runat="server" ID="pnlDadosPessoais" CssClass="camada-1">
             <h2>Dados Pessoais</h2>
             <asp:Panel runat="server" CssClass="camada-2">
                 <asp:Panel runat="server" CssClass="marginTop5px">
@@ -45,8 +45,16 @@
                     <asp:Label runat="server" ID="lblNome" Width="60%"></asp:Label>
                 </asp:Panel>
                 <asp:Panel runat="server" CssClass="marginTop5px">
+                    <asp:Label runat="server" Text="Sexo" Width="30%" CssClass="bgcolorRed" Font-Bold="True" ForeColor="White"></asp:Label>
+                    <asp:Label runat="server" ID="lblSexo" Width="60%"></asp:Label>
+                </asp:Panel>
+                <asp:Panel runat="server" CssClass="marginTop5px">
                     <asp:Label runat="server" Text="Nascimento" Width="30%" CssClass="bgcolorRed" Font-Bold="True" ForeColor="White"></asp:Label>
                     <asp:Label runat="server" ID="lblNascimento" Width="60%"></asp:Label>
+                </asp:Panel>
+                <asp:Panel runat="server" CssClass="marginTop5px">
+                    <asp:Label runat="server" Text="Idade" Width="30%" CssClass="bgcolorRed" Font-Bold="True" ForeColor="White"></asp:Label>
+                    <asp:Label runat="server" ID="lblIdade" Width="60%"></asp:Label>
                 </asp:Panel>
                 <asp:Panel runat="server" CssClass="marginTop5px">
                     <asp:Label runat="server" Text="Cpf" Width="30%" CssClass="bgcolorRed" Font-Bold="True" ForeColor="White"></asp:Label>
@@ -64,6 +72,11 @@
                     <asp:Label runat="server" Text="Telefone" Width="30%" CssClass="bgcolorRed" Font-Bold="True" ForeColor="White"></asp:Label>
                     <asp:Label runat="server" ID="lblTelefone" Width="60%"></asp:Label>
                 </asp:Panel>
+            </asp:Panel>
+            <asp:Panel runat="server" ID="pnlLInkButton" CssClass="pnlLinkButtons">
+                <asp:LinkButton ID="lnkEditarAluno" runat="server" OnClick="lnkEditarAluno_Onclick" ForeColor="white">Editar</asp:LinkButton>
+                <asp:LinkButton ID="lnkPagmentos" runat="server" OnClick="lnkPagmentos_Onclick" ForeColor="white">Pagamentos</asp:LinkButton>
+                <asp:LinkButton ID="lnkTreinos" runat="server" OnClick="lnkTreinos_Onclick" ForeColor="white">Treinos</asp:LinkButton>
             </asp:Panel>
         </asp:Panel>
     </asp:Panel>

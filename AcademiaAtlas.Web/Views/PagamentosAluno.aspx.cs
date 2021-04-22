@@ -14,8 +14,7 @@ namespace AcademiaAtlas.Web.Views
         protected void Page_Load(object sender, EventArgs e)
         {
             Pagamento pgt = new Pagamento();
-            pgt.IdPessoa = 6;
-            
+            pgt.IdPessoa = Convert.ToInt32( Request.QueryString["Aluno"]);
             var pagamentos = SvcPagamento.BuscarPagamentoPorId(pgt);
             foreach (var item in pagamentos) 
             {

@@ -184,13 +184,25 @@ section {
 .labelCadastro {
     font-family: Arial;
     font-size: 20px;
+    color: #333333;
     margin-left:15px;
-   margin-top:1px;
+    margin-top: 1px;
     padding: 5px;
-    padding-bottom:8px;
+    padding-bottom: 8px;
     background-color: Gainsboro;
     border-radius: 10px 0 0 10px;
-
+}
+.labelAlerta {
+    font-family: Arial;
+    font-size: 12px;
+    color: red;
+    margin-left: 15px;
+    margin-top: 1px;
+    padding: 5px;
+    padding-bottom: 8px;
+    background-color: Gainsboro;
+    border-radius: 10px 0 0 10px;
+    border: solid 1px #9e1215;
 }
 
 .inputCadastro{
@@ -558,6 +570,7 @@ section {
         border-style: solid;
         border-color: #201b1c;
         border-radius: 20px;
+        padding: 10px;
     }
 
         .conteudo-duplo .camada-1 h2 {
@@ -1034,8 +1047,8 @@ footer {
 
 .marginTop5px {
     font-family: Arial;
-    margin-top: 15px;
-    background-color: beige;
+    margin-top: 8px;
+    background-color: white;
 }
 
 .marginTop8px {
@@ -1048,7 +1061,7 @@ table {
 }
 
 .bgcolorRed {
-    background-color: #CE5D5A;
+    background-color: #880f14;
     border-radius: 0 10px 10px 0;
     padding: 10px;
 }
@@ -1109,4 +1122,15 @@ table {
     background-color: #2e2c2ad9;
     padding: 10px 0;
     color:white;
+}
+
+.borderColorRed 
+{
+    border:solid 1px #9e1215;
+}
+
+.pnlLinkButtons {
+    margin: auto;
+    width: 40%;
+    padding:5px 0;
 }

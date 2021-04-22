@@ -15,6 +15,15 @@ namespace AcademiaAtlas.Web.Views
     {
 
         /// <summary>
+        /// lblTituloCadUpd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTituloCadUpd;
+
+        /// <summary>
         /// txbNome control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace AcademiaAtlas.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbNome;
+
+        /// <summary>
+        /// pnlNascimento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pnlNascimento;
 
         /// <summary>
         /// txbNascimento control.
@@ -33,13 +51,31 @@ namespace AcademiaAtlas.Web.Views
         protected global::System.Web.UI.WebControls.TextBox txbNascimento;
 
         /// <summary>
-        /// txbSexo control.
+        /// lblSexo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbSexo;
+        protected global::System.Web.UI.WebControls.Label lblSexo;
+
+        /// <summary>
+        /// Masculino control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Masculino;
+
+        /// <summary>
+        /// Feminino control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton Feminino;
 
         /// <summary>
         /// txbCpf control.

@@ -33,15 +33,15 @@ namespace AcademiaSolution.Tst
             Aluno aluno = new Aluno();
             aluno.Nome = "Alexandr";
             var pNascimento = DateTime.Parse("1980-11-18");
-            var anos = SvcAluno.BuscarAluno(aluno).GroupBy(a=>a.Nascimento).Where(b=>b.Key.Year==pNascimento.Year && b.Key.Month== pNascimento.Month);
+           // var anos = SvcAluno.BuscarAluno(aluno).GroupBy(a=>a.Nascimento).Where(b=>b.Key.Year==pNascimento.Year && b.Key.Month== pNascimento.Month);
             var mensagem = "";
-            if (anos.Any())
+            //if (anos.Any())
 
-            {
-                mensagem = anos.First().Key.ToString();
-               var x= anos;
-                Console.WriteLine("Resultado da pesquisa {0}",mensagem);
-            }
+            //{
+            //    mensagem = anos.First().Key.ToString();
+            //   var x= anos;
+            //    Console.WriteLine("Resultado da pesquisa {0}",mensagem);
+            //}
             
         }
 

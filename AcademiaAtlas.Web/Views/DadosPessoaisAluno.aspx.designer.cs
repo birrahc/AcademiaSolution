@@ -60,6 +60,15 @@ namespace AcademiaAtlas.Web.Views
         protected global::System.Web.UI.WebControls.GridView grvAluno;
 
         /// <summary>
+        /// pnlDadosPessoais control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlDadosPessoais;
+
+        /// <summary>
         /// lblNome control.
         /// </summary>
         /// <remarks>
@@ -69,6 +78,15 @@ namespace AcademiaAtlas.Web.Views
         protected global::System.Web.UI.WebControls.Label lblNome;
 
         /// <summary>
+        /// lblSexo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSexo;
+
+        /// <summary>
         /// lblNascimento control.
         /// </summary>
         /// <remarks>
@@ -76,6 +94,15 @@ namespace AcademiaAtlas.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNascimento;
+
+        /// <summary>
+        /// lblIdade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIdade;
 
         /// <summary>
         /// lblCpf control.
@@ -112,5 +139,41 @@ namespace AcademiaAtlas.Web.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTelefone;
+
+        /// <summary>
+        /// pnlLInkButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlLInkButton;
+
+        /// <summary>
+        /// lnkEditarAluno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkEditarAluno;
+
+        /// <summary>
+        /// lnkPagmentos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkPagmentos;
+
+        /// <summary>
+        /// lnkTreinos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkTreinos;
     }
 }
